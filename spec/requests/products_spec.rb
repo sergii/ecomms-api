@@ -8,7 +8,6 @@ describe 'Products API', type: :request do
     before { get '/products' }
 
     it 'returns list of all products' do
-      json = JSON.parse(response.body)
       expect(json).not_to be_empty
       expect(json.size).to eq(50)
     end
@@ -23,7 +22,6 @@ describe 'Products API', type: :request do
 
     context 'when the record exists' do
       it 'returns product' do
-        json = JSON.parse(response.body)
         expect(json).not_to be_empty
         expect(json['id']).to eq(product_id)
       end
@@ -37,7 +35,6 @@ describe 'Products API', type: :request do
       let(:product_id) { 1001 }
 
       it 'returns a not found message' do
-        json = JSON.parse(response.body)
         expect(json['message']).to eq("Couldn't find Product with 'id'=#{product_id}")
       end
 
