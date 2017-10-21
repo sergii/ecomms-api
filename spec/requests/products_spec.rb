@@ -43,4 +43,52 @@ describe 'Products API', type: :request do
       end
     end
   end
+
+  describe 'POST /products' do
+    context 'with valid payload' do
+      let(:valid_payload) do
+        {
+          name: 'IPhone',
+          brand: 'Apple',
+          model: 'X',
+          sku: '024f8ec0-193e-4897-8b3c-1b315691a3b5',
+          price: '999',
+          desc: 'An all‑new 5.8‑inch Super Retina screen fills the hand and dazzles the eyes.'
+        }
+      end
+
+      before { post '/products', params: valid_payload }
+
+      it 'creates a product' do
+        expect(json[:name]).to eq('IPhone')
+      end
+
+      it 'returns status code 201' do
+        expect(response.status).to eq(201)
+      end
+    end
+
+    context 'with invalid payload' do
+      let(:invalid_payload) do
+        {
+          name: 'IPhone',
+          brand: '',
+          model: 'X',
+          sku: '024f8ec0-193e-4897-8b3c-1b315691a3b5',
+          price: '999',
+          desc: 'An all‑new 5.8‑inch Super Retina screen fills the hand and dazzles the eyes.'
+        }
+      end
+
+      before { post '/products', params: invalid_payload }
+
+      it 'returns a validation failure message' do
+        expect(json[:message]).to match(/Validation failed: Brand can't be blank/)
+      end
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+    end
+  end
 end
