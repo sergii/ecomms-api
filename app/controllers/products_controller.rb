@@ -17,6 +17,13 @@ class ProductsController < ApplicationController
     json_response(@product, :created)
   end
 
+  # PUT/products/:id
+  def update
+    @product = Product.find(params[:id])
+    Product.update(product_params)
+    head :no_content
+  end
+
   private
     # Only allow a trusted parameter "white list" through.
     def product_params
