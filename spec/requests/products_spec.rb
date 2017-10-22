@@ -26,7 +26,7 @@ describe 'Products API', type: :request do
         expect(json[:id]).to eq(product_id)
       end
 
-      it 'returns status 200' do
+      it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
     end
@@ -64,7 +64,7 @@ describe 'Products API', type: :request do
       end
 
       it 'returns status code 201' do
-        expect(response.status).to eq(201)
+        expect(response).to have_http_status(201)
       end
     end
 
@@ -88,6 +88,34 @@ describe 'Products API', type: :request do
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
+      end
+    end
+  end
+
+  describe 'PUT /products/:id' do
+    let(:valid_payload) { { price: 1000 } }
+
+    before { put "/products/#{product_id}", params: valid_payload }
+
+    context 'when the record exists' do
+      it 'updates the product' do
+        expect(response.body).to be_empty
+      end
+
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+
+    context 'when the record not found' do
+      let(:product_id) { 0 }
+
+      it 'returns a not found message' do
+        expect(json[:message]).to eq("Couldn't find Product with 'id'=#{product_id}")
+      end
+
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
       end
     end
   end

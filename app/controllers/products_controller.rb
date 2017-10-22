@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :update]
+
   # GET /products
   def index
     @products = Product.all
@@ -7,7 +9,6 @@ class ProductsController < ApplicationController
 
   # GET /products/:id
   def show
-    @product = Product.find(params[:id])
     json_response(@product)
   end
 
@@ -17,9 +18,19 @@ class ProductsController < ApplicationController
     json_response(@product, :created)
   end
 
+  # PUT/products/:id
+  def update
+    Product.update(product_params)
+    head :no_content
+  end
+
   private
     # Only allow a trusted parameter "white list" through.
     def product_params
       params.permit(:name, :brand, :model, :sku, :price, :desc)
+    end
+
+    def set_product
+      @product = Product.find(params[:id])
     end
 end
