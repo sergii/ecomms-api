@@ -26,7 +26,7 @@ describe 'Products API', type: :request do
         expect(json[:id]).to eq(product_id)
       end
 
-      it 'returns status 200' do
+      it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
     end
@@ -64,7 +64,7 @@ describe 'Products API', type: :request do
       end
 
       it 'returns status code 201' do
-        expect(response.status).to eq(201)
+        expect(response).to have_http_status(201)
       end
     end
 
