@@ -41,6 +41,8 @@ end
 group :test do
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'faker', '~> 1.8.4'
+  gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'database_cleaner', '~> 1.6.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
