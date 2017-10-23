@@ -20,14 +20,18 @@ class ProductsController < ApplicationController
 
   # PUT/products/:id
   def update
-    @product.update(product_params)
+    @product.update(price)
     head :no_content
   end
 
   private
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.permit(:name, :brand, :model, :sku, :price, :desc)
+      params.require(:product).permit(:name, :brand, :model, :sku, :price, :desc)
+    end
+
+    def price
+      params.require(:product).permit(:price)
     end
 
     def set_product

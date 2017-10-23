@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:brand) }
+    it { should validate_presence_of(:model) }
+    it { should validate_presence_of(:sku) }
+    it { should validate_presence_of(:price) }
+    it { should validate_presence_of(:desc) }
+  end
 end
