@@ -1,4 +1,5 @@
-# README
+# Ecomms API
+[![Build Status](https://travis-ci.org/sergii/ecomms.svg?branch=master)](https://travis-ci.org/sergii/ecomms)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
