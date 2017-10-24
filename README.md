@@ -101,4 +101,4 @@ $ heroku open
 
 ## Demo
 
-https://ecomms.herokuapp.com - Link to working application
+https://ecomms-api.herokuapp.com - Link to working API application
