@@ -101,4 +101,5 @@ $ heroku open
 
 ## Demo
 
+https://github.com/sergii/ecomms-api source code
 https://ecomms-api.herokuapp.com - Link to working API application
