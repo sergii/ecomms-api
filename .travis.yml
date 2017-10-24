@@ -11,4 +11,4 @@ postgres:
 
 before_script:
   - "psql -c 'create database ecomms_test;' -U postgres"
-  - "rake db:migrate"
+  - "bundle exec rake db:migrate"
