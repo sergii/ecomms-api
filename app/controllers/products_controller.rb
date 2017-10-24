@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :authorize_request, only: :index
   before_action :set_product, only: [:show, :update]
 
   # GET /products
@@ -25,16 +26,18 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Only allow a trusted parameter "white list" through.
-    def product_params
-      params.require(:product).permit(:name, :brand, :model, :sku, :price, :desc)
-    end
 
-    def price
-      params.require(:product).permit(:price)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def product_params
+    params.require(:product).permit(:name, :brand, :model, :sku, :price, :desc)
+  end
 
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  # As from specs we should update only price - permit only price
+  def price
+    params.require(:product).permit(:price)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end

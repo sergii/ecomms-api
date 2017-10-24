@@ -11,6 +11,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require "./app/middleware/catch_json_parse_errors"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -29,5 +30,8 @@ module Ecomms
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Use custom middleware that rescues the errors thrown when JSON can't be parsed
+    config.middleware.use CatchJsonParseErrors
   end
 end
