@@ -3,3 +3,12 @@ sudo: false
 
 rvm:
 - 2.4.2
+
+postgres:
+  adapter: postgresql
+  database: ecomms_test
+  username: postgres
+
+before_script:
+  - "psql -c 'create database ecomms_test;' -U postgres"
+  - "rake db:migrate"
