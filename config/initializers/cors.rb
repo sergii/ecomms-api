@@ -7,8 +7,8 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    # Restrict access only to our ecomms client react app
-    origins 'http://localhost:3000'
+    # Allow access for all
+    origins '*'
 
     resource '*',
       headers: :any,
