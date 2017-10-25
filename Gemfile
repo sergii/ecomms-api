@@ -46,6 +46,7 @@ group :test do
   gem 'capybara', '~> 2.15.4'
   gem 'curb', '~> 0.9.4'
   gem 'selenium-webdriver', '~> 3.6.0'
+  gem 'simplecov', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
