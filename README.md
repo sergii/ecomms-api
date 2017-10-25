@@ -1,5 +1,6 @@
 # Ecomms - simple E-commerce type API web application (Ecomms API)
 [![Build Status](https://travis-ci.org/sergii/ecomms.svg?branch=master)](https://travis-ci.org/sergii/ecomms)
+
 [![Coverage Status](https://coveralls.io/repos/sergii/ecomms-api/badge.png)](https://coveralls.io/github/sergii/ecomms-api)
 
 Backend build with rails-api, frontend with React.
@@ -103,4 +104,5 @@ $ heroku open
 ## Demo
 
 https://github.com/sergii/ecomms-api source code
+
 https://ecomms-api.herokuapp.com - Link to working API application
