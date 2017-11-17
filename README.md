@@ -1,6 +1,7 @@
 # Ecomms - simple E-commerce type API web application (Ecomms API)
 [![Build Status](https://travis-ci.org/sergii/ecomms-api.svg?branch=master)](https://travis-ci.org/sergii/ecomms-api)
 [![Coverage Status](https://coveralls.io/repos/github/sergii/ecomms-api/badge.svg?branch=feature%2Fcoveralls)](https://coveralls.io/github/sergii/ecomms-api?branch=feature%2Fcoveralls)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsergii%2Fecomms-api.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsergii%2Fecomms-api?ref=badge_shield)
 
 Backend build with rails-api, frontend with React.
 
@@ -105,3 +106,7 @@ $ heroku open
 https://github.com/sergii/ecomms-api source code
 
 https://ecomms-api.herokuapp.com - Link to working API application
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsergii%2Fecomms-api.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsergii%2Fecomms-api?ref=badge_large)
