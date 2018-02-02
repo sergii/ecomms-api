@@ -107,6 +107,9 @@ https://github.com/sergii/ecomms-api source code
 
 https://ecomms-api.herokuapp.com - Link to working API application
 
+## Test CI Build
+Remove after 05.01.2018
+
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsergii%2Fecomms-api.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsergii%2Fecomms-api?ref=badge_large)
